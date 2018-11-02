@@ -1,0 +1,60 @@
+
+.container {
+  height: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.selected-page {
+  border: 1px solid #222222;
+  border-radius: 15%;
+  transform: scale(1.4);
+  background: #f2f2f2;
+  width: 20px;
+  height: 15px;
+  text-align: center;
+  top: 50%;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-content-end {
+
+  justify-content: flex-end;
+}
+
+.paggination {
+  list-style: none;
+}
+
+.paggination-item {
+  cursor: pointer;
+}
+
+.paggination-item:hover {
+  transform: scale(1.4);
+  transition: all 0.3s ease;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.py {
+  padding: 30px;
+}
+
+.my {
+  margin: 30px;
+}

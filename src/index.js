@@ -1,11 +1,17 @@
-class HelloWorld {
-  message = 'Hello World';
-  print = () => this.message;
-}
+import { _, createRender } from './my-react';
+import { createStore } from './my-react-render';
+import App from './Components/App';
+import reducer from './reducer';
 
-const hello = new HelloWorld();
-// eslint-disable-next-line no-console
-console.log(
-  `%c ${hello.print()}`,
-  `color: green; font-size:48px; weight: bold`,
+import * as data from './data.json';
+
+const store = createStore(reducer);
+
+const render = createRender(
+  _(App)({ store: store, data: data }),
+  document.getElementById('root'),
 );
+
+store.subscribe(render);
+
+store.dispatch({});
