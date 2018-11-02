@@ -24,7 +24,7 @@ const TaskTable = data => {
 
   store.add({
     pages: getPages(pageCountInit, showedPage),
-    sortedStates: head.fill(1),
+    sortedStates: Array(head.length).fill(1),
     rows: body,
     filteredRows: body,
     showedPage: showedPage,

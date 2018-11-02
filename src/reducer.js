@@ -1,10 +1,11 @@
 const reducer = (state = 0, action) => {
-  const filtered = state.rows.filter(
-    row => row.join(' ').match(action.query) !== null,
-  );
-  const sortedStates = [...state.sortedStates];
+  let filtered;
+  let sortedStates;
   switch (action.type) {
     case 'FILTER_TABLE': {
+      filtered = state.rows.filter(
+    row => row.join(' ').match(action.query) !== null,
+  );
       return {
         ...state,
         filteredRows: filtered,
@@ -31,6 +32,7 @@ const reducer = (state = 0, action) => {
             : state.showedPage,
       };
     case 'SORT_COLUMN':
+      sortedStates = [...state.sortedStates]
       sortedStates[action.query] = (sortedStates[action.query] + 1) % 3;
       return {
         ...state,
